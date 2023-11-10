@@ -1,19 +1,19 @@
 import React,{useState,useEffect} from 'react'
 import { useData } from '../Context/DataProvider'
+import { useStateGroup } from '../Context/StateContext';
 import Section from './Section';
 import GroupStyle from "../Styles/Group.module.css"
 export default function Group() {
 
+    const {stateGroup,setStateGroup} = useStateGroup();
     const {state,setState} = useData();
-    // console.log(state);
     const [multiplex, setMultiplex] = useState(0);
-
+  
 
     const GroupByUser = (userData) => {
         if (!userData) {
             return <></>;
           }
-        //   console.log(userData);
         return(
             <div className={GroupStyle.wrapper} >
             {Object.keys(userData).map((userId) => {
@@ -53,18 +53,14 @@ export default function Group() {
     }
 
     useEffect(()=>{
-        setMultiplex(state.states.currentGroup)
-    },[state.states.currentGroup
-    ])
-
+        setMultiplex(stateGroup.states.currentGroup)
+    },[stateGroup])
+ 
 
 
     
   return (
-    <div style={{backgroundColor:"#F4F5F8"}} >
-        {/* {GroupByUser(state.userData)} */}
-        {/* {GroupByStatus(state.statusData)} */}
-        {/* {GroupByPriority(state.priorityData)} */}
+    <div style={{backgroundColor:"#F4F5F8",height:"100vh"}} >
         {multiplex===1?GroupByUser(state.userData):multiplex===0?GroupByStatus(state.statusData):GroupByPriority(state.priorityData)};
     </div>
   )

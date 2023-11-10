@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import DataProvider from './Context/DataProvider';
+import StateProvider from './Context/StateContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
+    <StateProvider>
     <DataProvider>
     <App />
     </DataProvider>
+    </StateProvider>
     
-  </React.StrictMode>
+ 
 );
 
 // If you want to start measuring performance in your app, pass a function
