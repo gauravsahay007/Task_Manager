@@ -1,0 +1,6 @@
+.sectionName{
+    display: flex;
+    flex-direction: row;
+    gap:0.7vw;
+    width: 9vw;
+}

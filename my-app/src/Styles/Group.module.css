@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  border-radius: 5px;
+}
+
+.wrapper > div {
+  padding: 1em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 19vw);
+}
