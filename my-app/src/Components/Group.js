@@ -60,7 +60,7 @@ export default function Group() {
 
     
   return (
-    <div style={{backgroundColor:"#F4F5F8",height:"100vh"}} >
+    <div >
         {multiplex===1?GroupByUser(state.userData):multiplex===0?GroupByStatus(state.statusData):GroupByPriority(state.priorityData)};
     </div>
   )

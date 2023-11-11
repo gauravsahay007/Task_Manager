@@ -22,7 +22,7 @@ export default function Header() {
     if (changeNumber === 0) setCurrentState({ ...currentState, index1: indexNumber, change: changeNumber });
     if (changeNumber === 1) setCurrentState({ ...currentState, index2: indexNumber, change: changeNumber });
   };
-
+ 
   useEffect(() => {
     if (currentState.change === 0) {
       setCurrentGroup(currentState.index1);
@@ -32,7 +32,7 @@ export default function Header() {
           ...prevState.states,
           currentGroup: currentState.index1,
           change: currentState.change,
-          currentOrder: currentState.currentOrder
+       
         },
       }));
     }
@@ -44,7 +44,7 @@ export default function Header() {
           ...prevState.states,
           currentOrder: currentState.index2,
           change: currentState.change,
-          currentGroup: currentState.currentGroup
+     
         },
       }));
     }
@@ -70,7 +70,7 @@ export default function Header() {
   };
 
   return (
-    <div style={{ height: "7vh", display: "flex", alignItems: "center", paddingLeft: "3.98vw" }} >
+    <div style={{ height: "7vh", display: "flex", alignItems: "center", paddingLeft: "3.98vw",backgroundColor:"white" }} >
       <div className={header.dropdown}>
 
         <button className={header.dropbtn} style={{ borderRadius: "4px", width: "fit-content", textAlign: "center", display: "flex", justifyContent: "center", justifyItems: "center", textAlign: "center", padding: "0.5em", gap: "0.5em", border: "1px", backgroundColor: "white", boxShadow: "0 0 5px #7B8788", alignItems: "center" }} >

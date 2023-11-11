@@ -4,6 +4,14 @@ import Group from './Components/Group';
 import { getData } from './API/main_apicalls';
 import { useData } from './Context/DataProvider';
 
+
+var rootStyle = {
+  backgroundColor : 'green',
+  color : 'white',
+  height : '100%'
+
+}
+
 export default function App() {
   const { state, setState } = useData();
 
@@ -89,6 +97,7 @@ export default function App() {
   useEffect(() => {
     fetchData();
   }, []);
+ 
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
