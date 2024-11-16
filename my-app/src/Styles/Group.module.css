@@ -1,16 +1,13 @@
-* {
-  box-sizing: border-box;
-}
-
-.wrapper {
-  border-radius: 5px;
-}
-
-.wrapper > div {
-  padding: 1em;
-}
-
+/* Group.module.css */
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 19vw);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for better adaptation */
+  gap: 1.5rem; /* Add spacing between items */
+  padding: 1rem; /* Add padding for better aesthetics */
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr; /* Single-column layout for small screens */
+  }
 }
